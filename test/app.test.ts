@@ -1,8 +1,10 @@
-import {App} from "../src/app";
+import request from "supertest";
+import {app} from "../src/app";
 
-describe('app.js should', () => {
-   it('return a name', () =>{
-       const app = new App();
-       expect(app.name).toBe('Sebas');
-   });
+describe('GET / - a simple api endpoint', () => {
+    it('Hello API Request', async () => {
+        const result = await request(app).get('/');
+        expect(result.text).toEqual('hello');
+        expect(result.statusCode).toEqual(200);
+    });
 });
