@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts",
-    "test": "jest --watchAll --verbose --",
+    "test": "jest --watchAll --verbose --coverage",
     "build": "tsc -p ."
   },
   "author": "",
